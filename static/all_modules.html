@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modules</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="student.js"></script>
+    <script src="all_modules.js"></script>
+  </head>
+  <body>
+    <h1>Modules</h1>
+    <div ng-app="mainApp" ng-controller="moduleController">
+        <table border = 1>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+            </tr>
+            <tr ng-repeat="module in modules">
+              <td>{{ module.code }}</td>
+              <td>{{ module.name }}</td>
+              <td><input type="button" ng-click="deleteModule(module.code)" value="Delete"></td>
+            </tr>
+            <tr>
+              <td><input type="text" ng-model="new_module.code"></td>
+              <td><input type="text" ng-model="new_module.name"></td>
+              <td><input type="button" ng-click="createModule()" value="Create"></td>
+            </tr>
+          </table>
+      </div>
+  </body>
+</html>
